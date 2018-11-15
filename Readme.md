@@ -1,3 +1,14 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [CustomFunctionActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/CustomFunctionActions.cs) (VB: [CustomFunctionActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/CustomFunctionActions.vb))
+* [ExportActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/ExportActions.cs) (VB: [ExportActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/ExportActions.vb))
+* [ProtectionActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/ProtectionActions.cs) (VB: [ProtectionActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/ProtectionActions.vb))
+* [SearchActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/SearchActions.cs) (VB: [SearchActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/SearchActions.vb))
+* [ShapeActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/ShapeActions.cs) (VB: [ShapeActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/ShapeActions.vb))
+* [SortActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/SortActions.cs) (VB: [SortActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/SortActions.vb))
+* [TableActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/TableActions.cs) (VB: [TableActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/TableActions.vb))
+<!-- default file list end -->
 # WinForms SpreadsheetControl API - Part 2
 
 
