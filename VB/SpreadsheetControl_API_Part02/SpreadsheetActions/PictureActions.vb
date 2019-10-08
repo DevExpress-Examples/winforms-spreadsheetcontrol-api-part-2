@@ -25,8 +25,8 @@ Namespace SpreadsheetControl_API
         #End Region
 
         Private Shared Sub InsertPictureValue(ByVal workbook As IWorkbook)
-'            #Region "#insertPicture"
-            Dim imageStream As Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("Pictures.x-spreadsheet.png")
+            '            #Region "#insertPicture"
+            Dim imageStream As Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("x-spreadsheet.png")
             Dim imageSource As SpreadsheetImageSource = SpreadsheetImageSource.FromStream(imageStream)
             workbook.BeginUpdate()
             ' Set the measurement unit to Millimeter.

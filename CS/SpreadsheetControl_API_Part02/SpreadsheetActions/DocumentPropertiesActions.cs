@@ -20,7 +20,7 @@ namespace SpreadsheetControl_API
                 Worksheet worksheet = workbook.Worksheets[0];
                 worksheet.Columns[0].WidthInCharacters = 2;
 
-                Range header = worksheet.Range["B2:C2"];
+                CellRange header = worksheet.Range["B2:C2"];
                 header[0].Value = "Property Name";
                 header[1].Value = "Value";
                 header.Style = workbook.Styles[BuiltInStyleId.Accent2];
@@ -57,7 +57,7 @@ namespace SpreadsheetControl_API
                 worksheet.Columns[0].WidthInCharacters = 2;
                 worksheet["E6"].Value = "Mike Hamilton";
 
-                Range header = worksheet.Range["B2:C2"];
+                CellRange header = worksheet.Range["B2:C2"];
                 header[0].Value = "Property Name";                
                 header[1].Value = "Value";
                 header.Style = workbook.Styles[BuiltInStyleId.Accent2];
