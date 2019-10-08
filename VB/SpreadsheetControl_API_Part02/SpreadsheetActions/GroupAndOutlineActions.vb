@@ -113,10 +113,10 @@ Namespace SpreadsheetControl_API
                     Dim worksheet As Worksheet = workbook.Worksheets("Regional Sales")
                     workbook.Worksheets.ActiveWorksheet = worksheet
 
-'                    #Region "#Subtotal"
-                    Dim dataRange As Range = worksheet("B3:E23")
-                    ' Specify that subtotals should be calculated for the column "D". 
-                    Dim subtotalColumnsList As New List(Of Integer)()
+                '                    #Region "#Subtotal"
+                Dim dataRange As CellRange = worksheet("B3:E23")
+                ' Specify that subtotals should be calculated for the column "D". 
+                Dim subtotalColumnsList As New List(Of Integer)()
                     subtotalColumnsList.Add(3)
                     ' Insert subtotals by each change in the column "B" and calculate the SUM fuction for the related rows in the column "D".
                     worksheet.Subtotal(dataRange, 1, subtotalColumnsList, 9, "Total")
