@@ -22,5 +22,11 @@
 <p><strong>Starting from v2014 vol.1:</strong><br />- Protect a workbook<br />- Protect a worksheet<br />- Apply user-specific permissions to a range in a protected worksheet<br />- Sort a range in descending and ascending orders<br />- Sort using a custom comparer<br />- Sort by multiple columns<br />- Simple search<br />- Search with options<br />- Export to HTML<br /><br /><strong>Starting from v2014 vol.2:</strong><br />- Group and outline data<br />- Insert subtotals<br />- Filter the data by a list of values<br />- Apply a number filter<br />- Apply a text filter<br />- Apply a dynamic filter<br />- Sort the filtered data<br />- Specify the built-in document properties<br />- Specify the custom document properties</p>
 
 <br/>
+See also:
+<br/>
+<a href="https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-e4655">WinForms SpreadsheetControl API</a>
+<br/>
+<a href="https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part-3-t231273">WinForms SpreadsheetControl API - Part 3</a>
+<br/>
 
 
