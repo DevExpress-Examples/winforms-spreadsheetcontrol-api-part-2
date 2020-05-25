@@ -34,7 +34,8 @@ Namespace SpreadsheetControl_API
             ' Export the entire worksheet to a stream as HTML.
             Dim htmlStream As New FileStream("OutputWorksheet.html", FileMode.Create)
             workbook.ExportToHtml(htmlStream, worksheet.Index)
-'            #End Region ' #ExportToHTML
+            htmlStream.Close()
+            '            #End Region ' #ExportToHTML
 
             System.Diagnostics.Process.Start("OutputRange.html")
             System.Diagnostics.Process.Start("OutputWorksheet.html")

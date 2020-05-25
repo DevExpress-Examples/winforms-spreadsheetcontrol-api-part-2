@@ -37,6 +37,7 @@ namespace SpreadsheetControl_API
             // Export the entire worksheet to a stream as HTML.
             FileStream htmlStream = new FileStream("OutputWorksheet.html", FileMode.Create);
             workbook.ExportToHtml(htmlStream, worksheet.Index);
+            htmlStream.Close();
             #endregion #ExportToHTML
 
             System.Diagnostics.Process.Start("OutputRange.html");
