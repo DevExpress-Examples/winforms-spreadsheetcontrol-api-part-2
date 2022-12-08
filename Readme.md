@@ -3,8 +3,38 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E4832)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Spreadsheet API – How to Process Excel Workbooks in Code (Part 2)
+
+The [WinForms Spreadsheet Control](https://www.devexpress.com/products/net/controls/winforms/spreadsheet/) allows you to create high-impact business data analysis solutions that emulate the look, feel and capabilities of Microsoft Excel®. It includes full integration with the DevExpress Ribbon control so you can deliver Excel inspired functionality with minimal effort.
+
+This example demonstrates how to use the Spreadsheet API to execute the following actions:
+
+* Insert, delete and modify pictures
+* Add a hyperlink to a picture
+* Add custom functions to the spreadsheet
+* Create a table
+* Apply a custom style to the table
+* Protect a workbook
+* Protect a worksheet
+* Apply user-specific permissions to a range in a protected worksheet
+* Sort a range in descending and ascending orders
+* Sort using a custom comparer
+* Sort by multiple columns
+* Simple search
+* Search with options
+* Export to HTML
+* Group and outline data
+* Insert subtotals
+* Filter the data by a list of values
+* Apply a number filter
+* Apply a text filter
+* Apply a dynamic filter
+* Sort the filtered data
+* Specify the built-in document properties
+* Specify the custom document properties
+
+# Files to Look At
 
 * [AutoFilterActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/AutoFilterActions.cs) (VB: [AutoFilterActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/AutoFilterActions.vb))
 * [CustomFunctionActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/CustomFunctionActions.cs) (VB: [CustomFunctionActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/CustomFunctionActions.vb))
@@ -16,22 +46,15 @@
 * [SearchActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/SearchActions.cs) (VB: [SearchActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/SearchActions.vb))
 * [SortActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/SortActions.cs) (VB: [SortActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/SortActions.vb))
 * [TableActions.cs](./CS/SpreadsheetControl_API_Part02/SpreadsheetActions/TableActions.cs) (VB: [TableActions.vb](./VB/SpreadsheetControl_API_Part02/SpreadsheetActions/TableActions.vb))
-<!-- default file list end -->
-# WinForms SpreadsheetControl API - Part 2
 
+# Documentation
 
-<p>This example is the second part of the SpreadsheetControl API set of examples that demonstrates how to use the SpreadsheetControl API to programmatically manage spreadsheet documents, without the need for Microsoft Excel to be installed.</p>
-<p>This sample introduces API properties and methods used to perform the following operations:</p>
-<p>- Insert, delete and modify pictures<br /> - Add a hyperlink to a picture<br /> - Add custom functions to the spreadsheet</p>
-<p><strong>Starting from v2013 vol.2:</strong><br />- Create a table<br />- Apply a custom style to the table</p>
-<p><strong>Starting from v2014 vol.1:</strong><br />- Protect a workbook<br />- Protect a worksheet<br />- Apply user-specific permissions to a range in a protected worksheet<br />- Sort a range in descending and ascending orders<br />- Sort using a custom comparer<br />- Sort by multiple columns<br />- Simple search<br />- Search with options<br />- Export to HTML<br /><br /><strong>Starting from v2014 vol.2:</strong><br />- Group and outline data<br />- Insert subtotals<br />- Filter the data by a list of values<br />- Apply a number filter<br />- Apply a text filter<br />- Apply a dynamic filter<br />- Sort the filtered data<br />- Specify the built-in document properties<br />- Specify the custom document properties</p>
+* [Data Presentation in Spreadsheet Documents](https://docs.devexpress.com/WindowsForms/18048/controls-and-libraries/spreadsheet/data-presentation)
+* [User-Defined Functions](https://docs.devexpress.com/WindowsForms/15447/controls-and-libraries/spreadsheet/formulas/functions/user-defined-functions-udf)
+* [Pictures in Spreadsheet Documents](https://docs.devexpress.com/WindowsForms/16499/controls-and-libraries/spreadsheet/charts-and-graphics/pictures)
+* [Protection in Spreadsheet Documents](https://docs.devexpress.com/WindowsForms/17097/controls-and-libraries/spreadsheet/protection)
 
-<br/>
-See also:
-<br/>
-<a href="https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-e4655">WinForms SpreadsheetControl API</a>
-<br/>
-<a href="https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part-3-t231273">WinForms SpreadsheetControl API - Part 3</a>
-<br/>
+# More Examples
 
-
+* [WinForms SpreadsheetControl API](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-e4655)
+* [WinForms SpreadsheetControl API - Part 3](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part-3-t231273)
