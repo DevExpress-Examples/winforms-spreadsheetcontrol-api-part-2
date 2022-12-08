@@ -56,5 +56,5 @@ This example demonstrates how to use the Spreadsheet API to execute the followin
 
 # More Examples
 
-* [WinForms SpreadsheetControl API](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-e4655)
+* [WinForms SpreadsheetControl API](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api)
 * [WinForms SpreadsheetControl API - Part 3](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part-3-t231273)
