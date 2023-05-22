@@ -5,7 +5,7 @@ Imports System.Diagnostics
 
 Namespace SpreadsheetControl_API
     Partial Public Class Form1
-        Inherits Form
+        Inherits DevExpress.XtraEditors.XtraForm
 
         Private workbook As IWorkbook
 

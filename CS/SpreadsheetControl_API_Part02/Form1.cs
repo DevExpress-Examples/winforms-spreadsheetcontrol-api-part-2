@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace SpreadsheetControl_API
 {
-    public partial class Form1 : Form
+    public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
 
         IWorkbook workbook;
