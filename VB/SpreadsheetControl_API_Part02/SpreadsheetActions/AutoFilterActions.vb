@@ -243,9 +243,8 @@ Namespace SpreadsheetControl_API
 
                 ' Apply a dynamic filter to the "Sales" column to display only values that are above the average.
                 worksheet.AutoFilter.Columns(2).ApplyDynamicFilter(DynamicFilterType.AboveAverage)
-                ' Apply a dynamic filter to the "Reported Date" column to display values reported this year.
-                worksheet.AutoFilter.Columns(3).ApplyDynamicFilter(DynamicFilterType.ThisYear)
-'                #End Region ' #DynamicFilter
+
+                '                #End Region ' #DynamicFilter
             Finally
                 workbook.EndUpdate()
             End Try

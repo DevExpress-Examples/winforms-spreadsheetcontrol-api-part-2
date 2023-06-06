@@ -57,7 +57,7 @@ namespace SpreadsheetControl_API
         static void InsertPictureFromUriValue(IWorkbook workbook)
         {
             #region #insertpicturefromuri
-            string imageUri = "http://www.devexpress.com/Products/NET/Document-Server/i/Unit-Conversion.png";
+            string imageUri = "https://docs.devexpress.com/OfficeFileAPI/images/mainpage-spreadsheetdocumentserver123246.png";
             // Create an image from Uri.
             SpreadsheetImageSource imageSource = SpreadsheetImageSource.FromUri(imageUri, workbook);
             // Set the measurement unit to point.

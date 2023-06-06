@@ -2,6 +2,7 @@
 Imports System.Windows.Forms
 Imports DevExpress.Spreadsheet
 Imports System.Diagnostics
+Imports System.Net
 
 Namespace SpreadsheetControl_API
     Partial Public Class Form1
@@ -10,6 +11,7 @@ Namespace SpreadsheetControl_API
         Private workbook As IWorkbook
 
         Public Sub New()
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.ServicePointManager.SecurityProtocol Or SecurityProtocolType.Tls12
             InitializeComponent()
 
             ' Access a workbook.
@@ -26,7 +28,7 @@ Namespace SpreadsheetControl_API
         End Sub
 
         Private Sub InitData(ByVal examples As GroupsOfSpreadsheetExamples)
-'            #Region "GroupNodes"
+            '            #Region "GroupNodes"
             examples.Add(New SpreadsheetNode("Pictures"))
             examples.Add(New SpreadsheetNode("Custom Functions"))
             examples.Add(New SpreadsheetNode("Tables"))
@@ -37,9 +39,9 @@ Namespace SpreadsheetControl_API
             examples.Add(New SpreadsheetNode("Group Data"))
             examples.Add(New SpreadsheetNode("Filter Data"))
             examples.Add(New SpreadsheetNode("Document Properties"))
-'            #End Region
+            '            #End Region
 
-'            #Region "ExampleNodes"
+            '            #Region "ExampleNodes"
 
             ' Add nodes to the "Pictures" group of examples.
             examples(0).Groups.Add(New SpreadsheetExample("Insert picture", PictureActions.InsertPictureAction))
@@ -104,7 +106,7 @@ Namespace SpreadsheetControl_API
             examples(9).Groups.Add(New SpreadsheetExample("Built-in properties", DocumentPropertiesActions.BuiltInPropertiesAction))
             examples(9).Groups.Add(New SpreadsheetExample("Custom properties", DocumentPropertiesActions.CustomPropertiesAction))
 
-'            #End Region
+            '            #End Region
         End Sub
 
         Private Sub DataBinding(ByVal examples As GroupsOfSpreadsheetExamples)
@@ -128,14 +130,14 @@ Namespace SpreadsheetControl_API
 
         ' ------------------- Load and Save a Document -------------------
         Private Sub LoadDocumentFromFile()
-'            #Region "#LoadDocumentFromFile"
+            '            #Region "#LoadDocumentFromFile"
             ' Load a workbook from the file.
             workbook.LoadDocument("Documents\Document.xlsx", DocumentFormat.OpenXml)
-'            #End Region ' #LoadDocumentFromFile
+            '            #End Region ' #LoadDocumentFromFile
         End Sub
 
         Private Sub SaveDocumentToFile()
-'            #Region "#SaveDocumentToFile"
+            '            #Region "#SaveDocumentToFile"
             ' Save the modified document to the file.
             workbook.SaveDocument("Documents\SavedDocument.xlsx", DocumentFormat.OpenXml)
 '            #End Region ' #SaveDocumentToFile

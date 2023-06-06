@@ -54,8 +54,8 @@ Namespace SpreadsheetControl_API
         End Sub
 
         Private Shared Sub InsertPictureFromUriValue(ByVal workbook As IWorkbook)
-'            #Region "#insertpicturefromuri"
-            Dim imageUri As String = "http://www.devexpress.com/Products/NET/Document-Server/i/Unit-Conversion.png"
+            '            #Region "#insertpicturefromuri"
+            Dim imageUri As String = "https://docs.devexpress.com/OfficeFileAPI/images/mainpage-spreadsheetdocumentserver123246.png"
             ' Create an image from Uri.
             Dim imageSource As SpreadsheetImageSource = SpreadsheetImageSource.FromUri(imageUri, workbook)
             ' Set the measurement unit to point.

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DevExpress.Spreadsheet;
 using System.Diagnostics;
+using System.Net;
 
 namespace SpreadsheetControl_API
 {
@@ -12,6 +13,7 @@ namespace SpreadsheetControl_API
 
         public Form1()
         {
+            System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
             InitializeComponent();
 
             // Access a workbook.
