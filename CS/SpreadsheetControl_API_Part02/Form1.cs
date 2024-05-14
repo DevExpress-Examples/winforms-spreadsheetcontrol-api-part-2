@@ -74,6 +74,8 @@ namespace SpreadsheetControl_API
             examples[4].Groups.Add(new SpreadsheetExample("Sort using custom comparer", SortActions.SelectComparerAction));
             examples[4].Groups.Add(new SpreadsheetExample("Sort by column", SortActions.SortBySpecifiedColumnAction));
             examples[4].Groups.Add(new SpreadsheetExample("Sort by multiple columns", SortActions.SortByMultipleColumnsAction));
+            examples[4].Groups.Add(new SpreadsheetExample("Sort by fill", SortActions.SortByFillColorAction));
+            examples[4].Groups.Add(new SpreadsheetExample("Sort by font color", SortActions.SortByFontColorAction));
 
             // Add nodes to the "Search" group of examples.
             examples[5].Groups.Add(new SpreadsheetExample("Simple search", SearchActions.SimpleSearchAction));
@@ -102,6 +104,10 @@ namespace SpreadsheetControl_API
             examples[8].Groups.Add(new SpreadsheetExample("Filter mixed data types by values", AutoFilterActions.FilterMixedDataTypesByValuesAction));
             examples[8].Groups.Add(new SpreadsheetExample("Apply Top 10 filter", AutoFilterActions.Top10FilterAction));
             examples[8].Groups.Add(new SpreadsheetExample("Apply dynamic filter", AutoFilterActions.DynamicFilterAction));
+            examples[8].Groups.Add(new SpreadsheetExample("Sort and filter by color", AutoFilterActions.FilterAndSortByColorAction));
+            examples[8].Groups.Add(new SpreadsheetExample("Filter by font color", AutoFilterActions.FilterByFontColorAction));
+            examples[8].Groups.Add(new SpreadsheetExample("Filter by fill color", AutoFilterActions.FilterByFillColorAction));
+            examples[8].Groups.Add(new SpreadsheetExample("Filter by background color", AutoFilterActions.FilterByBackgroundColorAction));
             examples[8].Groups.Add(new SpreadsheetExample("Reapply filter", AutoFilterActions.ReapplyFilterAction));
             examples[8].Groups.Add(new SpreadsheetExample("Clear filter", AutoFilterActions.ClearFilterAction));
             examples[8].Groups.Add(new SpreadsheetExample("Disable filtering", AutoFilterActions.DisableFilterAction));

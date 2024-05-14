@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace SpreadsheetControl_API
 {
@@ -20,12 +19,17 @@ namespace SpreadsheetControl_API
         public static Action<IWorkbook> FilterMixedDataTypesByValuesAction = FilterMixedDataTypesByValues;
         public static Action<IWorkbook> Top10FilterAction = Top10FilterValue;
         public static Action<IWorkbook> DynamicFilterAction = DynamicFilterValue;
+        public static Action<IWorkbook> FilterAndSortByColorAction = FilterAndSortByColorValue;
+        public static Action<IWorkbook> FilterByBackgroundColorAction = FilterByBackgroundColorValue;
+        public static Action<IWorkbook> FilterByFontColorAction = FilterByFontColorValue;
+        public static Action<IWorkbook> FilterByFillColorAction = FilterByFillColorValue;
         public static Action<IWorkbook> ReapplyFilterAction = ReapplyFilterValue;
         public static Action<IWorkbook> ClearFilterAction = ClearFilter;
         public static Action<IWorkbook> DisableFilterAction = DisableFilter;
         #endregion
 
-        static void ApplyFilter(IWorkbook workbook) {
+        static void ApplyFilter(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -42,7 +46,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void FilterAndSortBySingleColumn(IWorkbook workbook) {
+        static void FilterAndSortBySingleColumn(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -62,7 +67,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void FilterAndSortByMultipleColumns(IWorkbook workbook) {
+        static void FilterAndSortByMultipleColumns(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -85,7 +91,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void FilterNumericByCondition(IWorkbook workbook) {
+        static void FilterNumericByCondition(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -128,7 +135,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void FilterByValue(IWorkbook workbook) {
+        static void FilterByValue(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -148,7 +156,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void FilterByMultipleValues(IWorkbook workbook) {
+        static void FilterByMultipleValues(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -162,7 +171,7 @@ namespace SpreadsheetControl_API
                 worksheet.AutoFilter.Apply(range);
 
                 // Filter the data in the "Product" column by an array of values.
-                worksheet.AutoFilter.Columns[1].ApplyFilterCriteria(new CellValue[] { "Mozzarella di Giovanni", "Gorgonzola Telino"});
+                worksheet.AutoFilter.Columns[1].ApplyFilterCriteria(new CellValue[] { "Mozzarella di Giovanni", "Gorgonzola Telino" });
                 #endregion #FilterByValues
             }
             finally { workbook.EndUpdate(); }
@@ -177,14 +186,14 @@ namespace SpreadsheetControl_API
                 Worksheet worksheet = workbook.Worksheets["Regional sales"];
                 workbook.Worksheets.ActiveWorksheet = worksheet;
 
-            #region #FilterDatesByCondition
-            // Enable filtering for the specified cell range.
-            CellRange range = worksheet["B2:E23"];
-            worksheet.AutoFilter.Apply(range);
+                #region #FilterDatesByCondition
+                // Enable filtering for the specified cell range.
+                CellRange range = worksheet["B2:E23"];
+                worksheet.AutoFilter.Apply(range);
 
-            // Filter values in the "Reported Date" column to display dates that are between June 1, 2014 and February 1, 2015.
-            worksheet.AutoFilter.Columns[3].ApplyCustomFilter(new DateTime(2014, 6, 1), FilterComparisonOperator.GreaterThanOrEqual, new DateTime(2015, 2, 1), FilterComparisonOperator.LessThanOrEqual, true);
-            #endregion #FilterDatesByCondition
+                // Filter values in the "Reported Date" column to display dates that are between June 1, 2014 and February 1, 2015.
+                worksheet.AutoFilter.Columns[3].ApplyCustomFilter(new DateTime(2014, 6, 1), FilterComparisonOperator.GreaterThanOrEqual, new DateTime(2015, 2, 1), FilterComparisonOperator.LessThanOrEqual, true);
+                #endregion #FilterDatesByCondition
             }
             finally { workbook.EndUpdate(); }
         }
@@ -235,7 +244,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void DynamicFilterValue(IWorkbook workbook) {
+        static void DynamicFilterValue(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -256,7 +266,103 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void ReapplyFilterValue(IWorkbook workbook) {
+        static void FilterAndSortByColorValue(IWorkbook workbook)
+        {
+            workbook.LoadDocument("Documents\\SalesReport.xlsx");
+            workbook.BeginUpdate();
+            try
+            {
+                #region #FilterAndSortByColor
+                Worksheet worksheet = workbook.Worksheets["Regional sales"];
+                workbook.Worksheets.ActiveWorksheet = worksheet;
+
+                // Enable filtering for the "B2:E23" cell range.
+                CellRange range = worksheet["B2:E23"];
+                worksheet.AutoFilter.Apply(range);
+
+                // Sort data in the "B2:E23" range
+                // in descending order by column "D".
+                Color color = worksheet["D12"].Font.Color;
+                worksheet.AutoFilter.SortState.Sort(2, color, false);
+                #endregion #FilterAndSortByColor
+            }
+            finally { workbook.EndUpdate(); }
+
+        }
+
+        static void FilterByBackgroundColorValue(IWorkbook workbook)
+        {
+            workbook.LoadDocument("Documents\\SalesReport.xlsx");
+            workbook.BeginUpdate();
+            try
+            {
+                #region #FilterByBackgroundColor
+                Worksheet worksheet = workbook.Worksheets["Regional sales"];
+                workbook.Worksheets.ActiveWorksheet = worksheet;
+
+                // Enable filtering for the "B2:E23" cell range.
+                CellRange range = worksheet["B2:E23"];
+                worksheet.AutoFilter.Apply(range);
+
+                // Filter values in the "Products" column by background color.
+                AutoFilterColumn products = worksheet.AutoFilter.Columns[1];
+                products.ApplyFillColorFilter(worksheet["C12"].FillColor);
+                #endregion #FilterByBackgroundColor
+            }
+            finally { workbook.EndUpdate(); }
+
+        }
+
+        static void FilterByFillColorValue(IWorkbook workbook)
+        {
+            workbook.LoadDocument("Documents\\SalesReport.xlsx");
+            workbook.BeginUpdate();
+            try
+            {
+                #region #FilterByFillColor
+                Worksheet worksheet = workbook.Worksheets["Regional sales"];
+                workbook.Worksheets.ActiveWorksheet = worksheet;
+
+                // Enable filtering for the "B2:E23" cell range.
+                CellRange range = worksheet["B2:E23"];
+                worksheet.AutoFilter.Apply(range);
+
+                // Filter values in the "Products" column by fill color.
+                AutoFilterColumn products = worksheet.AutoFilter.Columns[1];
+                products.ApplyFillFilter(worksheet["C10"].Fill);
+                #endregion #FilterByFillColor
+            }
+            finally { workbook.EndUpdate(); }
+
+
+        }
+
+        static void FilterByFontColorValue(IWorkbook workbook)
+        {
+            workbook.LoadDocument("Documents\\SalesReport.xlsx");
+            workbook.BeginUpdate();
+            try
+            {
+                #region #FilterByFontColor
+                Worksheet worksheet = workbook.Worksheets["Regional sales"];
+                workbook.Worksheets.ActiveWorksheet = worksheet;
+
+                // Enable filtering for the "B2:E23" cell range.
+                CellRange range = worksheet["B2:E23"];
+                worksheet.AutoFilter.Apply(range);
+
+                // Filter values in the "Sales" column by font color.
+                AutoFilterColumn products = worksheet.AutoFilter.Columns[2];
+                products.ApplyFontColorFilter(worksheet["D10"].Font.Color);
+                #endregion #FilterByFontColor
+            }
+            finally { workbook.EndUpdate(); }
+
+
+        }
+
+        static void ReapplyFilterValue(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -280,7 +386,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void ClearFilter(IWorkbook workbook) {
+        static void ClearFilter(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
@@ -303,7 +410,8 @@ namespace SpreadsheetControl_API
             finally { workbook.EndUpdate(); }
         }
 
-        static void DisableFilter(IWorkbook workbook) {
+        static void DisableFilter(IWorkbook workbook)
+        {
             workbook.LoadDocument("Documents\\SalesReport.xlsx");
             workbook.BeginUpdate();
             try
