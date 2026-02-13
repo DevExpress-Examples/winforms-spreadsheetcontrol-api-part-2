@@ -60,7 +60,7 @@ This example demonstrates how to use the Spreadsheet API to execute the followin
 * [WinForms SpreadsheetControl API - Part 1](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part1)
 * [WinForms SpreadsheetControl API - Part 3](https://github.com/DevExpress-Examples/winforms-spreadsheetcontrol-api-part-3-t231273)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-spreadsheetcontrol-api-part-2&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-spreadsheetcontrol-api-part-2&~~~was_helpful=no)
 
