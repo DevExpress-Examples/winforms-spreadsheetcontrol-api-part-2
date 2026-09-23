@@ -1,4 +1,3 @@
-﻿Imports Microsoft.VisualBasic
 Imports System
 Imports System.ComponentModel
 Imports DevExpress.XtraTreeList
@@ -7,39 +6,32 @@ Imports DevExpress.Spreadsheet
 Namespace SpreadsheetControl_API
 
     Public Class SpreadsheetNode
-        Private groups_Renamed As New GroupsOfSpreadsheetExamples()
-        Private owner_Renamed As GroupsOfSpreadsheetExamples
-        Private fName As String
+
+        Private groupsField As GroupsOfSpreadsheetExamples = New GroupsOfSpreadsheetExamples()
+
+        Private ownerField As GroupsOfSpreadsheetExamples
 
         Public Sub New(ByVal name As String)
-            fName = name
+            Me.Name = name
         End Sub
 
+        <Browsable(False)>
+        Public ReadOnly Property Groups As GroupsOfSpreadsheetExamples
+            Get
+                Return groupsField
+            End Get
+        End Property
+
         Public Property Name As String
+
+        <Browsable(False)>
+        Public Property Owner As GroupsOfSpreadsheetExamples
             Get
-                Return fName
+                Return ownerField
             End Get
-            Set(value As String)
-                fName = value
-            End Set
-        End Property
 
-        <Browsable(False)> _
-        Public ReadOnly Property Groups() As GroupsOfSpreadsheetExamples
-            Get
-                Return groups_Renamed
-            End Get
-        End Property
-
-
-
-        <Browsable(False)> _
-        Public Property Owner() As GroupsOfSpreadsheetExamples
-            Get
-                Return owner_Renamed
-            End Get
             Set(ByVal value As GroupsOfSpreadsheetExamples)
-                owner_Renamed = value
+                ownerField = value
             End Set
         End Property
     End Class
@@ -47,20 +39,20 @@ Namespace SpreadsheetControl_API
     Public Class SpreadsheetExample
         Inherits SpreadsheetNode
 
-        Private fAction As Action(Of IWorkbook)
+        Private _Action As Action(Of DevExpress.Spreadsheet.IWorkbook)
 
         Public Sub New(ByVal name As String, ByVal action As Action(Of IWorkbook))
             MyBase.New(name)
-            fAction = action
+            Me.Action = action
         End Sub
-
 
         Public Property Action As Action(Of IWorkbook)
             Get
-                Return fAction
+                Return _Action
             End Get
+
             Private Set(ByVal value As Action(Of IWorkbook))
-                fAction = value
+                _Action = value
             End Set
         End Property
     End Class
@@ -68,14 +60,17 @@ Namespace SpreadsheetControl_API
     Public Class GroupsOfSpreadsheetExamples
         Inherits BindingList(Of SpreadsheetNode)
         Implements TreeList.IVirtualTreeListData
+
         Private Sub VirtualTreeGetChildNodes(ByVal info As VirtualTreeGetChildNodesInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetChildNodes
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             info.Children = obj.Groups
         End Sub
+
         Protected Overrides Sub InsertItem(ByVal index As Integer, ByVal item As SpreadsheetNode)
             item.Owner = Me
             MyBase.InsertItem(index, item)
         End Sub
+
         Private Sub VirtualTreeGetCellValue(ByVal info As VirtualTreeGetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetCellValue
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             Select Case info.Column.Caption
@@ -83,6 +78,7 @@ Namespace SpreadsheetControl_API
                     info.CellData = obj.Name
             End Select
         End Sub
+
         Private Sub VirtualTreeSetCellValue(ByVal info As VirtualTreeSetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeSetCellValue
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             Select Case info.Column.Caption
